@@ -9,4 +9,10 @@ class RgbTest < Minitest::Test
     assert_equal "#9400d3", to_hex(148, 0, 211)
     assert_equal "#9400d3", to_hex(148, -20, 211), "Handle negative numbers"
   end
+
+  def test_to_rgb
+    assert_equal [0, 0, 0], to_rgb('#000000')
+    assert_equal [255, 255, 255], to_rgb('#ffffff')
+    assert_equal [148, 0, 211], to_rgb('#9400d3')
+  end
 end
