@@ -1,0 +1,19 @@
+# TypeProf 0.21.7
+
+# Classes
+class Object
+  private
+  def fizz_buzz: (Integer n) -> String
+end
+
+# for avoiding "Ruby::UnknownConstant"
+# see: https://qiita.com/jnchito/items/ba50cfb83bc12700b9c7
+module Minitest
+  class Test
+    def assert_equal: (untyped, untyped) -> void
+  end
+end
+
+class FizzBuzzTest < Minitest::Test
+  def test_fizz_buzz: -> untyped
+end
